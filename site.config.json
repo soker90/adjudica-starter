@@ -1,0 +1,19 @@
+{
+  "siteName": "Nombre del portal",
+  "siteDescription": "Datos abiertos y análisis de contratación pública.",
+  "siteUrl": "https://example.org",
+  "geographicLabel": "Ámbito geográfico",
+  "logoPath": "/logo.svg",
+  "logoAlt": "Logotipo del portal",
+  "brandMark": "A",
+  "theme": {
+    "accent": "#00d4a4",
+    "primary": "#0d9373",
+    "soft": "#ecfdf5"
+  },
+  "localityName": "",
+  "provinceCode": "",
+  "provinceName": "",
+  "localityAliases": [],
+  "localSupplierNifs": []
+}
