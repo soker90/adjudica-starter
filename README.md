@@ -20,7 +20,7 @@ Plantilla para crear una instancia de Adjudica. Este repositorio guarda la ident
    git commit -m "chore(data): initialize instance database"
    ```
 
-6. Añade el secreto `DNI_SALT` en **Settings → Secrets and variables → Actions** del repositorio nuevo. Lo necesitan los flujos que anonimizan identificadores personales.
+6. Configura `DNI_SALT` como secreto de Actions del repositorio nuevo y como variable de entorno de producción en su proyecto de Vercel. La aplicación y los flujos lo usan para seudonimizar identificadores personales; ambos entornos deben compartir el mismo valor estable.
 7. En Vercel, conecta el repositorio nuevo y conserva la raíz del proyecto en `.`. El comando de compilación prepara el submódulo con `site.config.json`, `public/logo.svg` y `data/contracts.db` de esta instancia.
 
 La instancia conserva aquí sus datos y configuración. Los cambios de funcionalidad se realizan en el repositorio `adjudica`.
