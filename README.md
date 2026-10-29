@@ -26,3 +26,16 @@ Plantilla para crear una instancia de Adjudica. Este repositorio guarda la ident
 Cuando la configuración esté en el repositorio, ejecuta manualmente el flujo `update-contracts` para cargar los primeros contratos. Después, las actualizaciones programadas guardarán los cambios SQLite aquí.
 
 La instancia conserva aquí sus datos y configuración. Los cambios de funcionalidad se realizan en el repositorio `adjudica`.
+
+## Actualizar la aplicación
+
+Adjudica publica versiones con etiquetas `vX.Y.Z`. La plantilla y cada portal fijan una versión concreta mediante el commit del submódulo. Para actualizar una instancia, ejecuta desde la raíz de su repositorio:
+
+```sh
+git -C adjudica fetch --tags origin
+git -C adjudica checkout vX.Y.Z
+git add adjudica
+git commit -m "Actualiza Adjudica a vX.Y.Z"
+```
+
+Revisa y despliega el cambio como cualquier otra actualización del repositorio.
