@@ -27,6 +27,57 @@ Cuando la configuración esté en el repositorio, ejecuta manualmente el flujo `
 
 La instancia conserva aquí sus datos y configuración. Los cambios de funcionalidad se realizan en el repositorio `adjudica`.
 
+## Personalizar textos y ámbitos
+
+La aplicación común usa textos genéricos como reserva. Cada instancia puede sobrescribirlos en `site.config.json`, sin modificar el submódulo `adjudica`.
+
+- `scopePresentation.primary`, `associated` y `all`: etiquetas, nombres cortos, descripciones y tooltips de los grupos de contratación. Usa identificadores de ámbito estables en los datos; estos campos solo controlan su presentación.
+- `scopePresentation.associated.enabled`: establece `false` si el portal no tiene un segundo grupo de organismos.
+- `homePresentation`: subtítulos y etiquetas de los indicadores de portada para cada grupo.
+- `homeAuditDescription`: texto de introducción del bloque de análisis de riesgos.
+- `organismsPresentation`: título, descripciones, notas y etiquetas del directorio de organismos.
+- `methodology`: versión, título, introducción y secciones propias. Cada sección admite `id`, `title`, `paragraphs`, `showInIndex` y bloques estructurados. Los bloques pueden ser `heading`, `paragraph` o `listItem`.
+- `instanceCreationGuide`: muestra la guía para crear instancias; déjalo en `true` en la plantilla y desactívalo en portales públicos que no deban mostrarla.
+
+Ejemplo reducido:
+
+```json
+{
+  "scopePresentation": {
+    "selectorTitle": "Filtrar por entidad:",
+    "primary": {
+      "label": "Ayuntamiento",
+      "shortLabel": "Municipal",
+      "description": "Contratación del ayuntamiento y sus organismos."
+    },
+    "associated": {
+      "enabled": false,
+      "label": "Organismos asociados"
+    },
+    "all": {
+      "label": "Toda la contratación"
+    }
+  },
+  "methodology": {
+    "title": "Metodología y fuentes",
+    "sections": [
+      {
+        "id": "fuentes",
+        "title": "Fuentes oficiales",
+        "paragraphs": ["Describe aquí las fuentes de datos de tu portal."],
+        "blocks": [
+          { "type": "heading", "text": "Frecuencia de actualización" },
+          { "type": "paragraph", "text": "Explica cuándo y cómo se actualizan los datos." },
+          { "type": "listItem", "text": "Feed oficial de PLACSP." }
+        ]
+      }
+    ]
+  }
+}
+```
+
+Los valores omitidos conservan la presentación genérica de Adjudica. No introduzcas nombres de municipios, organismos o entidades en el código compartido: deben residir en la configuración y los catálogos de la instancia.
+
 ## Actualizar la aplicación
 
 Adjudica publica versiones con etiquetas `vX.Y.Z`. La plantilla y cada portal fijan una versión concreta mediante el commit del submódulo. Para actualizar una instancia, ejecuta desde la raíz de su repositorio:
