@@ -35,6 +35,8 @@ La aplicación común usa textos genéricos como reserva. Cada instancia puede s
 - `scopePresentation.associated.enabled`: establece `false` si el portal no tiene un segundo grupo de organismos.
 - `homePresentation`: subtítulos y etiquetas de los indicadores de portada para cada grupo.
 - `homeAuditDescription`: texto de introducción del bloque de análisis de riesgos.
+- `analysisPresentation`: etiquetas de ámbito y texto del enlace metodológico en la página de análisis.
+- `dataPresentation`: etiquetas de ámbito activo en la página de datos abiertos.
 - `organismsPresentation`: título, descripciones, notas y etiquetas del directorio de organismos.
 - `methodology`: versión, título, introducción y secciones propias. Cada sección admite `id`, `title`, `paragraphs`, `showInIndex` y bloques estructurados. Los bloques pueden ser `heading`, `paragraph` o `listItem`.
 - `instanceCreationGuide`: muestra la guía para crear instancias; déjalo en `true` en la plantilla y desactívalo en portales públicos que no deban mostrarla.
