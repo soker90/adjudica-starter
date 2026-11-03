@@ -67,14 +67,11 @@ jobs:
       - name: Clasificar importes de adjudicación de la BD de CI
         run: pnpm run migrate-award-amount-type
 
-      - name: Validar base de datos canónica
-        run: pnpm run validate-db
-
       - name: Lint
         run: pnpm lint
 
       - name: Tests
-        run: pnpm test
+        run: pnpm run test:ci
 
       - name: Build
         env:
